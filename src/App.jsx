@@ -9,6 +9,9 @@ function App() {
       <UlList></UlList>
       <Box name="Rimi" title="Full-Stack Dev"></Box>
       <Box name="Ruba" title="Front-end Dev"></Box>
+      <BoxDestructuring name="Saleha" title="Full Time Mom"></BoxDestructuring>
+      <BoxDestructuring name="Khorshed Alam" title="Accountant"></BoxDestructuring>
+      <BoxDestructuring name="Rasel" title="Student"></BoxDestructuring>
     </>
   );
 }
@@ -42,6 +45,15 @@ function Box(props) {
     <div style={boxStyle}>
       <h2>Developer Name: {props.name}</h2>
       <h2>Designation: {props.title}</h2>
+    </div>
+  );
+}
+function BoxDestructuring({ name, title }) {
+  console.log(name, title);
+  return (
+    <div style={boxStyle}>
+      <h2>Name: {name}</h2>
+      <h2>Designation: {title}</h2>
     </div>
   );
 }
