@@ -1,5 +1,5 @@
 import "./App.css";
-
+import ToDo from "./ToDo";
 function App() {
   return (
     <>
@@ -12,6 +12,10 @@ function App() {
       <BoxDestructuring name="Saleha" title="Full Time Mom"></BoxDestructuring>
       <BoxDestructuring name="Khorshed Alam" title="Accountant"></BoxDestructuring>
       <BoxDestructuring name="Rasel" title="Student"></BoxDestructuring>
+      <ToDo task="React Js" isDone={false} duration="50"></ToDo>
+      <ToDo task="Revise Js" isDone={true}></ToDo>
+      <ToDo task="Shower" isDone={false}></ToDo>
+      <ToDo task="Sleep" isDone={true}></ToDo>
     </>
   );
 }
