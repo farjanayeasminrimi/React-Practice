@@ -2,12 +2,16 @@ import "./App.css";
 import ToDo from "./ToDo";
 import Food from "./Food";
 import Handler, { Button3Handler, Button4Handler } from "./EventHandler";
+import Counter from "./State";
+import Counter2 from "./State2";
 function App() {
   return (
     <>
       <Buttons></Buttons>
+      <Counter></Counter>
       <ShowName></ShowName>
       <ShowName></ShowName>
+      <Counter2></Counter2>
       <Daynamic></Daynamic>
       <UlList></UlList>
       <Box name="Rimi" title="Full-Stack Dev"></Box>
