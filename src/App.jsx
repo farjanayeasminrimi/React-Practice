@@ -4,10 +4,28 @@ import Food from "./Food";
 import Handler, { Button3Handler, Button4Handler } from "./EventHandler";
 import Counter from "./State";
 import Counter2 from "./State2";
+import Users from "./Users";
+import { Suspense } from "react";
+import Friends from "./Friends";
+
+const UsersData = fetch("https://jsonplaceholder.typicode.com/users").then((res) => res.json());
+
+const FriendsData = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  return res.json();
+};
+
 function App() {
+  const FriendsRes = FriendsData();
   return (
     <>
+      <Suspense fallback={<h3>Data Loading ...</h3>}>
+        <Users UsersData={UsersData}></Users>
+      </Suspense>
       <Buttons></Buttons>
+      <Suspense fallback={<h3>Friends Data Loading...</h3>}>
+        <Friends FriendsRes={FriendsRes}></Friends>
+      </Suspense>
       <Counter></Counter>
       <ShowName></ShowName>
       <ShowName></ShowName>
@@ -96,7 +114,6 @@ function Box(props) {
   );
 }
 function BoxDestructuring({ name, title }) {
-  console.log(name, title);
   return (
     <div style={boxStyle}>
       <h2>Name: {name}</h2>
