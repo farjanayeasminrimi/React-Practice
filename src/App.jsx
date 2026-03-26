@@ -1,9 +1,11 @@
 import "./App.css";
 import ToDo from "./ToDo";
 import Food from "./Food";
+import Handler, { Button3Handler, Button4Handler } from "./EventHandler";
 function App() {
   return (
     <>
+      <Buttons></Buttons>
       <ShowName></ShowName>
       <ShowName></ShowName>
       <Daynamic></Daynamic>
@@ -25,6 +27,38 @@ function App() {
   );
 }
 
+function Buttons() {
+  return (
+    <div>
+      <button onClick={Handler} style={{ margin: "7px", padding: "10px" }}>
+        Button1
+      </button>
+      <button
+        onClick={function Button2() {
+          alert("Button2 has clicked just now!!");
+        }}
+        style={{ margin: "7px", padding: "10px" }}
+      >
+        Button2
+      </button>
+      <button onClick={Button3Handler} style={{ margin: "7px", padding: "10px" }}>
+        Button3
+      </button>
+      <button
+        onClick={() => {
+          alert("Clicked in button four");
+        }}
+        style={{ margin: "7px", padding: "10px" }}
+      >
+        Button4
+      </button>
+
+      <button onClick={() => Button4Handler("Rimi")} style={{ margin: "7px", padding: "10px" }}>
+        Button5
+      </button>
+    </div>
+  );
+}
 function ShowName() {
   return <h1>Hello World</h1>;
 }
