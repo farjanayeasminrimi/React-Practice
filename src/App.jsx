@@ -7,6 +7,7 @@ import Counter2 from "./State2";
 import Users from "./Users";
 import { Suspense } from "react";
 import Friends from "./Friends";
+import Posts from "./Posts";
 
 const UsersData = fetch("https://jsonplaceholder.typicode.com/users").then((res) => res.json());
 
@@ -15,10 +16,18 @@ const FriendsData = async () => {
   return res.json();
 };
 
+const FetchPosts = async () => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+  return res.json();
+};
+
 function App() {
   const FriendsRes = FriendsData();
   return (
     <>
+      <Suspense fallback={<h3>Posts Loading...</h3>}>
+        <Posts FetchPosts={FetchPosts()}></Posts>
+      </Suspense>
       <Suspense fallback={<h3>Data Loading ...</h3>}>
         <Users UsersData={UsersData}></Users>
       </Suspense>
