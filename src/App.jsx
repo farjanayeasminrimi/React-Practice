@@ -1,5 +1,6 @@
 import "./App.css";
 import ToDo from "./ToDo";
+import Food from "./Food";
 function App() {
   return (
     <>
@@ -16,6 +17,10 @@ function App() {
       <ToDo task="Revise Js" isDone={true}></ToDo>
       <ToDo task="Shower" isDone={false}></ToDo>
       <ToDo task="Sleep" isDone={true}></ToDo>
+      <Food name="Rimi" isHungry={true}></Food>
+      <Food name="Ruba" isHungry={false}></Food>
+      <Food name="Rasel" isHungry={true}></Food>
+      <Food name="Raihan" isHungry={true}></Food>
     </>
   );
 }
